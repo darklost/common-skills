@@ -1,5 +1,5 @@
 ---
-name: release
+name: common-kit-release
 description: >
   基于 git flow release 的自动化发版流程。当用户提到「发版」「发布版本」「release」「打版本」
   「新版本」「切版本」「发版说明」「release notes」时触发。覆盖从 commits 自动生成发版说明、
