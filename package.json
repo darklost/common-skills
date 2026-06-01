@@ -1,0 +1,24 @@
+{
+  "name": "common-skills",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "个人常用 Codex/Claude Code 技能集合",
+  "scripts": {
+    "validate": "node scripts/validate.mjs"
+  },
+  "exports": {
+    "./manifest": "./common-skills.manifest.json"
+  },
+  "files": [
+    "README.md",
+    "scripts",
+    "skills",
+    "common-skills.manifest.json"
+  ],
+  "commonSkills": {
+    "manifest": "./common-skills.manifest.json",
+    "bootstrapSkill": "common-kit",
+    "skillsDir": "./skills"
+  }
+}
