@@ -1,0 +1,31 @@
+{
+  "manifestVersion": 1,
+  "packageName": "common-skills",
+  "bootstrapSkill": {
+    "name": "common-kit",
+    "path": "skills/common-kit/SKILL.md"
+  },
+  "skillsDir": "skills",
+  "skillFileName": "SKILL.md",
+  "skills": [
+    {
+      "name": "common-kit",
+      "path": "skills/common-kit/SKILL.md",
+      "purpose": "将用户请求路由到对应的 common-kit skill，根据意图匹配并触发已注册的 skill。"
+    },
+    {
+      "name": "common-kit-release",
+      "path": "skills/release/SKILL.md",
+      "purpose": "基于 git flow release 的自动化发版流程：预检查、版本号确定、从 commits 生成发版说明、执行 release、推送 tag。"
+    }
+  ],
+  "install": {
+    "defaultTarget": "~/.claude/skills",
+    "altTarget": "~/.codex/skills",
+    "script": "scripts/install.sh",
+    "uninstallScript": "scripts/uninstall.sh"
+  },
+  "validation": {
+    "scriptPath": "scripts/validate.mjs"
+  }
+}
