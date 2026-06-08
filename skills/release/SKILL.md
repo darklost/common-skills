@@ -102,20 +102,16 @@ EOF
 
 ```bash
 git flow release start {version}
-git flow release finish -f .tagmsg {version}
+git flow release finish -F .tagmsg {version}
 ```
 
 注意：
 - `{version}` 不要加 `v` 前缀
-- `-f` 从 `.tagmsg` 读取 tag message
+- `-F` 从 `.tagmsg` 文件读取 tag message（传递给 `git tag -F`），`-f` 是 `--force` 不要混淆
 - 如果 finish 产生合并冲突，终止流程并告知用户手动处理
 - **绝不跳过 hooks（`--no-verify`）**
 
-### 第 5 步：清理并推送
-
-```bash
-rm .tagmsg
-```
+### 第 5 步：推送
 
 推送前必须向用户确认，展示拟执行的命令和影响范围：
 
@@ -130,6 +126,12 @@ rm .tagmsg
 
 ```bash
 git push --all && git push --tags
+```
+
+推送成功后清理：
+
+```bash
+rm .tagmsg
 ```
 
 ### 第 6 步：完成提示
